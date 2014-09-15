@@ -1,0 +1,58 @@
+
+<h1>THE AMAZING ANGULAR FRAMERORK!  <br>
+ROTFLMAOLOLZCOPTORZZZZZ!!!!</h1>
+<br>
+<div ng-controller="IndexCtrl">
+  <h3>Movies</h3>
+  </h4>This is a background color selector that doesn't actually work:</h4>
+  <form>
+      <input autofocus type="text" ng-model="color">
+  </form>
+  
+  <div ng-style="{ backgroundColor: '{{color}}' }">
+    <h3>We have {{favoriteMovies.length}}
+      <ng-pluralize count = "favoriteMovies.length" when ="{'1' : 'movie', 'other' : 'movies'}">
+      </ng-pluralize>
+    </h3>
+    <input type="checkbox" ng-model = "checked" id = "check"> <label for="check">Show movies?</label>
+    <div ng-show="checked">
+      <div ng-repeat="movie in favoriteMovies | orderBy: '-title' | limitTo: 3">
+        <ul>
+          <li>Title: {{movie.title | reverseString}}</li>  
+          <li>Rating: {{movie.rating}}</li>
+          <li>Awesome Factor: {{movie.awesomeFactor}}</li>
+          <li>
+            <button ng-click="removeMovie(movie)">Remove this movie</button>
+          </li>
+          <br>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <h3 ng-hide="checked">Movies Hidden...</h3>
+    </div>
+    <br>
+    <br>
+    <h2>Key Press Counter! OMGZORZ!!!</h2>
+    <input ng-keypress="count = count + 1" ng-init="count=0">
+    <p>key press count: {{count}}</p>
+    <br>
+    <br>
+    <form ng-hide="submitted">
+      <label for="submitted"><h3>Extra special!  Type something and then watch is magically disappearzzzzz!!!</h3></label>
+      <input type="text">
+      <input type="submit" ng-model="submitted = false" id="submit">
+    </form>
+    <h3>Oh noes!  Dozzent wurk!!  OMGzzzz...</h3>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+
+
